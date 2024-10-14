@@ -62,7 +62,7 @@ a {
 .topo {
     /* Necessário para garantir que o topo fique sempre por cima de qualquer elemento */
     z-index: 10;
-    
+
     position: sticky;
     top: 0;
     background-color: var(--cor-clara);
@@ -266,7 +266,10 @@ article {
         padding-bottom: .3rem;
     }
 
-    th, td { border: solid 1px var(--cor-escura); }
+    th,
+    td {
+        border: solid 1px var(--cor-escura);
+    }
 
     th {
         background-color: var(--cor-escura);
@@ -274,11 +277,16 @@ article {
         padding: .5rem;
     }
 
-    td { padding: .4rem; }
+    td {
+        padding: .4rem;
+    }
 
-    td:nth-child(2) { text-align: center; }
+    td:nth-child(2) {
+        text-align: center;
+    }
 
-    td:last-child, th:last-child {
+    td:last-child,
+    th:last-child {
         text-align: right;
     }
 
@@ -286,6 +294,7 @@ article {
         background-color: var(--cor-clara);
     }
 }
+
 .galeria {
     text-align: center;
 
@@ -295,32 +304,107 @@ article {
         box-shadow: var(--cor-escura) 0 0 30px;
         transition: .5s;
 
-        &:hover { /* ou FORA .galeria img:hover {} */
+        &:hover {
+            /* ou FORA .galeria img:hover {} */
             transform: scale(1) rotate(0);
         }
     }
 }
 
+/* Regras para o formulário de contato */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+form div {
+    margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border: none;
+    padding: 6px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+textarea {
+    height: auto;
+}
+
+button {
+    border: none;
+    background-color: var(--cor-escura);
+    color: var(--cor-clara);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+button:hover,
+button:focus {
+    background-color: darkblue;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#area-do-cep {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cep {
+    width: 50%;
+}
+
+#buscar {
+    width: 49%;
+    padding: 12px;
+}
+
+.campos-restantes {
+    display: none;
+}
 
 /* MediavQueries: regas de uso condicional de acordo com o tamanho de tela necessário para ajustes no site. */
 @media screen and (min-width: 600px) {
+
     /* Escondendo a palavra "Menu" */
-    .titulo-menu { display: none; }
+    .titulo-menu {
+        display: none;
+    }
 
     /* Exibimos os links (lista de links) do menu */
     .links-menu {
         display: flex;
 
         /* Forçamos cada item da lista a ter largura total e, com isso, redistribuir os espaços/alinhamentos. */
-        li { width: 100%; }
+        li {
+            width: 100%;
+        }
     }
+
     /* Ajustamos o tamanho do menu (nav) como um topo */
-    .menu { width: 60%; }
+    .menu {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
-    html { font-size: 18px; }
-    .limitador { max-width: 1000px; }
+    html {
+        font-size: 18px;
+    }
+
+    .limitador {
+        max-width: 1000px;
+    }
 }
-
-
